@@ -1,0 +1,6 @@
+findGuestById:
+  handler: ${self:custom.functionsDirectory}/guest/findGuestById.handler
+  events:
+    - httpApi:
+        path: /guest
+        method: get
