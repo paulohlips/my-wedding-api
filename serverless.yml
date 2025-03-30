@@ -13,7 +13,7 @@ plugins:
   - serverless-offline
 
 custom:
-  functionsDirectory: src/4-framework/functions
+  functionsDirectory: src/framework/functions
 
 functions:
 - "${file(${self:custom.functionsDirectory}/guest/_handlers.yml)}"
