@@ -1,7 +1,8 @@
 import { APIGatewayEvent } from "aws-lambda";
 import { findGuestByIdController } from "../../../controller/guest/findGuestByIdController";
+import { HttpOutput } from "../../../utils/httpOutput";
 
-export const handler = async (event: APIGatewayEvent): any => {
+export const handler = async (event: APIGatewayEvent): Promise<HttpOutput> => {
   const guestId = event.pathParameters?.id;
 
   if (!guestId) {
