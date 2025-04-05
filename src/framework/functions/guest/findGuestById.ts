@@ -1,3 +1,4 @@
+import "../../infra/beforeAll";
 import { APIGatewayEvent } from "aws-lambda";
 import { findGuestByIdController } from "../../../controller/guest/findGuestByIdController";
 import { HttpOutput } from "../../../utils/httpOutput";
