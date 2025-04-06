@@ -1,6 +1,13 @@
-findGuestById:
-  handler: ${self:custom.functionsDirectory}/guest/findGuestById.handler
+findGuestByToken:
+  handler: ${self:custom.functionsDirectory}/guest/findGuestByToken.handler
   events:
     - httpApi:
-        path: /guest/{id}
+        path: /guest/{token}
+        method: get
+
+findAllGuests:
+  handler: ${self:custom.functionsDirectory}/guest/findAllGuests.handler
+  events:
+    - httpApi:
+        path: /guest
         method: get

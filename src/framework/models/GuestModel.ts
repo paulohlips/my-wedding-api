@@ -1,6 +1,9 @@
 import { v4 as uuid } from "uuid";
 import dynamoose from "../infra/database";
+import { Guest } from "../../business/entity/guest";
+import { Item } from "dynamoose/dist/Item";
 
+interface GuestItem extends Item, Guest {}
 const GuestSchema = new dynamoose.Schema(
   {
     id: {
@@ -20,4 +23,4 @@ const GuestSchema = new dynamoose.Schema(
   }
 );
 
-export const GuestModel = dynamoose.model("Guest", GuestSchema);
+export const GuestModel = dynamoose.model<GuestItem>("Guest", GuestSchema);
