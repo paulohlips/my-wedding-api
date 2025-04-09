@@ -1,5 +1,5 @@
-import { Guest } from "../entity/guest";
-import { IGuestRepository } from "../repository/IGuestRepository";
+import { Guest } from "../../entity/guest";
+import { IGuestRepository } from "../../repository/IGuestRepository";
 
 export class ConfirmGuestPresencesUseCase {
   constructor(private readonly guestRepository: IGuestRepository) {}

@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { ConfirmGuestPresencesUseCase } from "../../business/usecase/confirmGuestPresenceUseCase";
+import { ConfirmGuestPresencesUseCase } from "../../business/usecase/guest/confirmGuestPresenceUseCase";
 
 const inputSchema = z.object({
   token: z

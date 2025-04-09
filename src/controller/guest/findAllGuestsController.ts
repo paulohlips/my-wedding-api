@@ -1,4 +1,4 @@
-import { FindAllGuestsUseCase } from "../../business/usecase/findAllGuestUseCase";
+import { FindAllGuestsUseCase } from "../../business/usecase/guest/findAllGuestUseCase";
 
 export class FindAllGuestsController {
   constructor(private readonly useCase: FindAllGuestsUseCase) {}

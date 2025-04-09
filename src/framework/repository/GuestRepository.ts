@@ -9,6 +9,7 @@ export class GuestRepository implements IGuestRepository {
       return result;
     } catch (error) {
       console.error(`Error on repository: ${error}`);
+      throw new Error("Error on GuestRepository.findAll");
     }
   }
 
@@ -21,6 +22,7 @@ export class GuestRepository implements IGuestRepository {
       return result;
     } catch (error) {
       console.error(`Error on repository: ${error}`);
+      throw new Error("Error on GuestRepository.findOne");
     }
   }
 
@@ -29,6 +31,7 @@ export class GuestRepository implements IGuestRepository {
       return await GuestModel.create(guest);
     } catch (error) {
       console.error(`Error on repository: ${error}`);
+      throw new Error("Error on GuestRepository.create");
     }
   }
 
@@ -37,6 +40,7 @@ export class GuestRepository implements IGuestRepository {
       await GuestModel.update({ token }, { isConfirmed });
     } catch (error) {
       console.error(`Error on repository: ${error}`);
+      throw new Error("Error on GuestRepository.confirmPresence");
     }
   }
 }

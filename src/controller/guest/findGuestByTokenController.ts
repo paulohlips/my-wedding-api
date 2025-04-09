@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { FindGuestByTokenUseCase } from "../../business/usecase/findGuestByTokenUseCase";
+import { FindGuestByTokenUseCase } from "../../business/usecase/guest/findGuestByTokenUseCase";
 
 const guestToken = z
   .string()

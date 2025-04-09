@@ -1,10 +1,10 @@
 import { GuestRepository } from "../../repository/GuestRepository";
-import { FindGuestByTokenUseCase } from "../../../business/usecase/findGuestByTokenUseCase";
-import { FindAllGuestsUseCase } from "../../../business/usecase/findAllGuestUseCase";
 import { FindGuestByTokenController } from "../../../controller/guest/findGuestByTokenController";
 import { FindAllGuestsController } from "../../../controller/guest/findAllGuestsController";
-import { ConfirmGuestPresencesUseCase } from "../../../business/usecase/confirmGuestPresenceUseCase";
 import { ConfirmGuestPresenceController } from "../../../controller/guest/confirmGuestPresenceController";
+import { FindGuestByTokenUseCase } from "../../../business/usecase/guest/findGuestByTokenUseCase";
+import { FindAllGuestsUseCase } from "../../../business/usecase/guest/findAllGuestUseCase";
+import { ConfirmGuestPresencesUseCase } from "../../../business/usecase/guest/confirmGuestPresenceUseCase";
 
 export const makeFindGuestByTokenController = () => {
   const guestRepository = new GuestRepository();
