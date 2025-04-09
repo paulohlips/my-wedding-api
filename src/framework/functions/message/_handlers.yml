@@ -4,3 +4,10 @@ createMessage:
     - httpApi:
         path: /message
         method: post
+
+findAllMessage:
+  handler: ${self:custom.functionsDirectory}/message/findAllMessage.handler
+  events:
+    - httpApi:
+        path: /message
+        method: get

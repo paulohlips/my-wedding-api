@@ -8,6 +8,8 @@ import { ConfirmGuestPresencesUseCase } from "../../../business/usecase/guest/co
 import { MessageRepository } from "../../repository/MessageRepository";
 import { CreateMessageUseCase } from "../../../business/usecase/message/createMessageUseCase";
 import { CreateMessageController } from "../../../controller/message/createMessageController";
+import { FindAllMessageUseCase } from "../../../business/usecase/message/findAllMessageUseCase";
+import { FindAllMessageController } from "../../../controller/message/findAllMessageController";
 
 export const makeFindGuestByTokenController = () => {
   const guestRepository = new GuestRepository();
@@ -31,4 +33,10 @@ export const makeCreateMessageController = () => {
   const messageRepository = new MessageRepository();
   const useCase = new CreateMessageUseCase(messageRepository);
   return new CreateMessageController(useCase);
+};
+
+export const makeFindAllMessageController = () => {
+  const messageRepository = new MessageRepository();
+  const useCase = new FindAllMessageUseCase(messageRepository);
+  return new FindAllMessageController(useCase);
 };
