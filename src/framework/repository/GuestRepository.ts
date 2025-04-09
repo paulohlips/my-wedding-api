@@ -14,7 +14,11 @@ export class GuestRepository implements IGuestRepository {
 
   async findOne(token: String): Promise<Guest | undefined> {
     try {
-      return await GuestModel.query("token").eq(token).exec();
+      const result = (await GuestModel.query("token")
+        .eq(token)
+        .exec()) as unknown as Guest;
+      console.log(result);
+      return result;
     } catch (error) {
       console.error(`Error on repository: ${error}`);
     }

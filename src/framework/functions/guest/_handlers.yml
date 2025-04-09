@@ -11,3 +11,10 @@ findAllGuests:
     - httpApi:
         path: /guest
         method: get
+
+confirmGuestPresence:
+  handler: ${self:custom.functionsDirectory}/guest/confirmGuestPresence.handler
+  events:
+    - httpApi:
+        path: /guest/confirmation
+        method: patch

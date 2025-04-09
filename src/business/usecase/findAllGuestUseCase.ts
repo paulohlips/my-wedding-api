@@ -10,6 +10,9 @@ export class FindAllGuestsUseCase {
       return await this.guestRepository.findAll();
     } catch (error) {
       console.error(`Error on FindAllGuestsUseCase: ${error}`);
+      throw new Error(
+        "Server error whitle trying to process FindAllGuestsUseCase"
+      );
     }
   }
 }

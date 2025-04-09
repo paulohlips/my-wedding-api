@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { FindGuestByTokenUseCase } from "../../business/usecase/findGuestByTokenUseCase";
 
-const GuestIdChema = z
+const guestToken = z
   .string()
   .length(6, { message: "Token must be exactly 6 characters" })
   .regex(/^[A-Z0-9]{6}$/, {
@@ -12,7 +12,7 @@ export class FindGuestByTokenController {
   constructor(private readonly useCase: FindGuestByTokenUseCase) {}
   async exec(token: string) {
     try {
-      GuestIdChema.parse(token);
+      guestToken.parse(token);
       console.log({ token });
       const result = await this.useCase.run(token);
       return result;

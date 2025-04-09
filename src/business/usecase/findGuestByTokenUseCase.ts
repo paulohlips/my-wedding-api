@@ -10,6 +10,9 @@ export class FindGuestByTokenUseCase {
       return await this.guestRepository.findOne(token);
     } catch (error) {
       console.error(`Error on FindGuestByTokenUseCase: ${error}`);
+      throw new Error(
+        "Server error whitle trying to process FindGuestByTokenUseCase"
+      );
     }
   }
 }
