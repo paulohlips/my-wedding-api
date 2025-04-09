@@ -18,9 +18,17 @@ export class FindGuestByTokenController {
       return result;
     } catch (error) {
       if (error instanceof z.ZodError) {
-        return `Validation failed: , ${JSON.stringify(error.issues)}`;
+        console.error(`Validation failed: , ${JSON.stringify(error.issues)}`);
+        return {
+          statusCode: 400,
+          body: `Validation failed: , ${JSON.stringify(error.issues)}`,
+        };
       } else {
-        return `Unexpected error: ${error}`;
+        console.error(`Unexpected error: ${error}`);
+        return {
+          statusCode: 500,
+          body: "Unexpected error",
+        };
       }
     }
   }

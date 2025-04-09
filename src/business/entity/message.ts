@@ -4,3 +4,5 @@ export class Message {
   message!: string;
   isApproved!: boolean;
 }
+
+export type MessageInput = Omit<Message, "id" | "isApproved">;

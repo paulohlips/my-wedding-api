@@ -13,7 +13,10 @@ const MessageSchema = new dynamoose.Schema({
   author: String,
   date: Date,
   message: String,
-  isApproved: Boolean,
+  isApproved: {
+    type: Boolean,
+    default: true,
+  },
 });
 
 export const MessageModel = dynamoose.model<MessageItem>(

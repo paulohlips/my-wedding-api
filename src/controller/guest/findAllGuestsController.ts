@@ -7,7 +7,11 @@ export class FindAllGuestsController {
       const result = await this.useCase.run();
       return result;
     } catch (error) {
-      console.error(`Error on FindAllGuestsController: ${error}`);
+      console.error(`Unexpected error: ${error}`);
+      return {
+        statusCode: 500,
+        body: "Unexpected error",
+      };
     }
   }
 }

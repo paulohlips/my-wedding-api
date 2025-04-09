@@ -1,0 +1,6 @@
+createMessage:
+  handler: ${self:custom.functionsDirectory}/message/createMessage.handler
+  events:
+    - httpApi:
+        path: /message
+        method: post

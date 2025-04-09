@@ -1,5 +1,5 @@
-import { Guest } from "../entity/guest";
-import { IGuestRepository } from "../repository/IGuestRepository";
+import { Guest } from "../../entity/guest";
+import { IGuestRepository } from "../../repository/IGuestRepository";
 
 export class FindAllGuestsUseCase {
   constructor(private readonly guestRepository: IGuestRepository) {}
@@ -9,9 +9,8 @@ export class FindAllGuestsUseCase {
     try {
       return await this.guestRepository.findAll();
     } catch (error) {
-      console.error(`Error on FindAllGuestsUseCase: ${error}`);
       throw new Error(
-        "Server error whitle trying to process FindAllGuestsUseCase"
+        "Server error while trying to process FindAllGuestsUseCase"
       );
     }
   }

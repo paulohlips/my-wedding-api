@@ -1,5 +1,5 @@
-import { Guest } from "../entity/guest";
-import { IGuestRepository } from "../repository/IGuestRepository";
+import { Guest } from "../../entity/guest";
+import { IGuestRepository } from "../../repository/IGuestRepository";
 
 export class FindGuestByTokenUseCase {
   constructor(private readonly guestRepository: IGuestRepository) {}
@@ -9,9 +9,8 @@ export class FindGuestByTokenUseCase {
     try {
       return await this.guestRepository.findOne(token);
     } catch (error) {
-      console.error(`Error on FindGuestByTokenUseCase: ${error}`);
       throw new Error(
-        "Server error whitle trying to process FindGuestByTokenUseCase"
+        "Server error while trying to process FindGuestByTokenUseCase"
       );
     }
   }

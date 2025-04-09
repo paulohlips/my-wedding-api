@@ -14,3 +14,5 @@ custom:
 
 functions:
 - "${file(${self:custom.functionsDirectory}/guest/_handlers.yml)}"
+- "${file(${self:custom.functionsDirectory}/message/_handlers.yml)}"
+

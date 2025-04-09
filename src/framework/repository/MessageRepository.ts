@@ -1,9 +1,9 @@
-import { Message } from "../../business/entity/message";
+import { Message, MessageInput } from "../../business/entity/message";
 import { IMessageRepository } from "../../business/repository/IMessageRepository";
 import { MessageModel } from "../models/MessageModel";
 
 export class MessageRepository implements IMessageRepository {
-  async create(input: Message): Promise<void> {
+  async create(input: MessageInput): Promise<void> {
     try {
       await MessageModel.create(input);
     } catch (error) {

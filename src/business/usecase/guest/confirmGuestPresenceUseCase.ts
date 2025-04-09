@@ -9,9 +9,8 @@ export class ConfirmGuestPresencesUseCase {
     try {
       return await this.guestRepository.confirmPresente(token, isConfirmed);
     } catch (error) {
-      console.error(`Error on ConfirmGuestPresencesUseCase: ${error}`);
       throw new Error(
-        "Server error whitle trying to process ConfirmGuestPresencesUseCase"
+        "Server error while trying to process ConfirmGuestPresencesUseCase"
       );
     }
   }
